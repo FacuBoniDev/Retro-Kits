@@ -1,5 +1,5 @@
 let productosEnCarrito = localStorage.getItem("productos-en-carrito");
-productosEnCarrito = JSON.parse(productosEnCarrito);
+productosEnCarrito = JSON.parse(productosEnCarrito) || [];
 
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const contenedorCarritoProductos = document.querySelector("#carrito-productos");
@@ -64,6 +64,7 @@ function cargarProductosCarrito() {
                     producto.cantidad = cantidad; // Actualizar la cantidad en el objeto producto
                     actualizarSubtotal(producto, div); // Actualizar el subtotal
                     actualizarTotal(); // Actualizar el total general
+                    guardarCarrito(); // Guardar cambios en localStorage
                 }
             });
 
@@ -74,6 +75,7 @@ function cargarProductosCarrito() {
                 producto.cantidad = cantidad; // Actualizar la cantidad en el objeto producto
                 actualizarSubtotal(producto, div); // Actualizar el subtotal
                 actualizarTotal(); // Actualizar el total general
+                guardarCarrito(); // Guardar cambios en localStorage
             });
         });
 
@@ -95,6 +97,10 @@ function actualizarSubtotal(producto, elementoProducto) {
     subtotalElement.textContent = `$${producto.precio * producto.cantidad}`;
 }
 
+// Función para guardar el carrito en localStorage
+function guardarCarrito() {
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+}
 
 cargarProductosCarrito();
 
@@ -111,9 +117,9 @@ function eliminarDelCarrito(e) {
         text: "Producto eliminado",
         duration: 3000,
         close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true,
         style: {
           background: "linear-gradient(to right, #3185fc, #1050b1)",
           borderRadius: "2rem",
@@ -121,10 +127,10 @@ function eliminarDelCarrito(e) {
           fontSize: ".75rem"
         },
         offset: {
-            x: '2rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: '2rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            x: '2rem',
+            y: '2rem'
           },
-        onClick: function(){} // Callback after click
+        onClick: function(){} 
       }).showToast();
 
     const idBoton = e.currentTarget.id;
@@ -132,14 +138,11 @@ function eliminarDelCarrito(e) {
     
     productosEnCarrito.splice(index, 1);
     cargarProductosCarrito();
-
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-
+    guardarCarrito();
 }
 
 botonVaciar.addEventListener("click", vaciarCarrito);
 function vaciarCarrito() {
-
     Swal.fire({
         title: '¿Estás seguro?',
         icon: 'question',
@@ -151,28 +154,24 @@ function vaciarCarrito() {
     }).then((result) => {
         if (result.isConfirmed) {
             productosEnCarrito.length = 0;
-            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+            guardarCarrito();
             cargarProductosCarrito();
         }
-      })
+    });
 }
-
 
 function actualizarTotal() {
     const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-    total.innerText = `$${totalCalculado}`;
+    contenedorTotal.innerText = `$${totalCalculado}`;
 }
 
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
-
     productosEnCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    guardarCarrito();
     
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.add("disabled");
     contenedorCarritoAcciones.classList.add("disabled");
     contenedorCarritoComprado.classList.remove("disabled");
-
 }
-

@@ -12,7 +12,6 @@ const contenedorProductos = document.querySelector("#contenedorProductos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
 const tituloPrincipal = document.querySelector("#tituloPrincipal");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
-const numerito = document.querySelector("#numerito");
 
 // Función para cargar y mostrar los productos en la página
 function cargarProductos(productosElegidos) {
@@ -138,5 +137,9 @@ function agregarAlCarrito(e) {
 
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-    numerito.innerText = nuevoNumerito;
+    const numeritos = document.querySelectorAll("#numerito");
+    
+    numeritos.forEach(numerito => {
+        numerito.innerText = nuevoNumerito;
+    });
 }
