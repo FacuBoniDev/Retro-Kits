@@ -2,7 +2,7 @@
     {
         "id": "camiseta-01",
         "titulo": "Barcelona 2008/2009",
-        "imagen": "./img/camiseta/01.PNG",
+        "imagen": "./img/camiseta/01.png",
         "categoria": {
             "nombre": "Camisetas",
             "id": "Camisetas"
@@ -22,7 +22,7 @@
     {
         "id": "camiseta-03",
         "titulo": "Manchester United 2007/2008",
-        "imagen": "./img/camiseta/03.PNG",
+        "imagen": "./img/camiseta/03.png",
         "categoria": {
             "nombre": "Camisetas",
             "id": "Camisetas"
