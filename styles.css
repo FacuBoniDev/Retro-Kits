@@ -17,6 +17,15 @@ body{
     flex-direction: column;
 }
 
+.volverTienda{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    &:hover{
+        color:rgb(10, 41, 219);
+    }
+}
+
 .content{
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -699,27 +708,6 @@ a.seguirComprando {
     h1{
         margin-left: 10rem;
     }
-    /* .asideIndexMobile{
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        z-index: 9;
-        background: linear-gradient(135deg, var(--azul), rgb(7, 113, 212));
-        left: 0;
-        top: 0;
-        height: 100%; 
-        width: 40%; 
-        border-right: 10px solid var(--gris-oscuro);
-        align-items: center;
-        justify-content: space-between;
-    }
-    .asideIndexMobile img{
-        height: 16rem;
-    }
-    .content{
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-    } */
     .carritoImgMobile{
         height: 3rem
     }
