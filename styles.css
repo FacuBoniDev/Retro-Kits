@@ -672,10 +672,10 @@ a.seguirComprando {
         min-height: 100dvh;
     }
     .productosContenedor{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         padding-inline: 0;
-        margin-inline: 10rem;
+        margin-inline: 8rem;
     }
     .mainIndex{
         margin-inline: 0;
