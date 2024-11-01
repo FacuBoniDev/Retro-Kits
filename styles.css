@@ -411,6 +411,7 @@ a.seguirComprando {
     display: flex;
     justify-content: space-between;
     height: 3.5rem;
+    margin-top: 4rem;
 }
 
 .carrito-acciones-vaciar {
@@ -460,7 +461,7 @@ a.seguirComprando {
 }
 
 .disabled {
-    display: none;
+    display: none !important; 
 }
 
 .footerCarrito{
@@ -597,6 +598,8 @@ a.seguirComprando {
         margin-right: .5rem;
         padding-inline: 1rem;
         border: 6px solid var(--azul);
+        min-height: 20rem;
+        overflow-y: auto;
     }
     .carrito-acciones{
         display: flex;
@@ -669,7 +672,7 @@ a.seguirComprando {
     .contenedorMobile{
         display: grid;
         grid-template-rows: auto 1fr auto;
-        min-height: 100dvh;
+        min-height: 100dvh !important;
     }
     .productosContenedor{
         grid-template-columns: repeat(2, 1fr);
