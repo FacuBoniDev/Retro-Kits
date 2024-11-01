@@ -1,5 +1,5 @@
 let productosEnCarrito = localStorage.getItem("productos-en-carrito");
-productosEnCarrito = JSON.parse(productosEnCarrito) || [];
+productosEnCarrito = JSON.parse(productosEnCarrito);
 
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const contenedorCarritoProductos = document.querySelector("#carrito-productos");
@@ -12,7 +12,6 @@ const botonComprar = document.querySelector("#carrito-acciones-comprar");
 
 function cargarProductosCarrito() {
     if (productosEnCarrito && productosEnCarrito.length > 0) {
-
         contenedorCarritoVacio.classList.add("disabled");
         contenedorCarritoProductos.classList.remove("disabled");
         contenedorCarritoAcciones.classList.remove("disabled");
@@ -64,7 +63,16 @@ function cargarProductosCarrito() {
                     producto.cantidad = cantidad; // Actualizar la cantidad en el objeto producto
                     actualizarSubtotal(producto, div); // Actualizar el subtotal
                     actualizarTotal(); // Actualizar el total general
-                    guardarCarrito(); // Guardar cambios en localStorage
+
+                    // Elimina la clase 'menosDeshabilitado' si la cantidad es mayor a 1
+                    if (cantidad > 1) {
+                        restarBtn.classList.remove("menosDeshabilitado");
+                    }
+                }
+                
+                // Si la cantidad es 1, añade la clase 'menosDeshabilitado'
+                if (cantidad === 1) {
+                    restarBtn.classList.add("menosDeshabilitado");
                 }
             });
 
@@ -75,11 +83,17 @@ function cargarProductosCarrito() {
                 producto.cantidad = cantidad; // Actualizar la cantidad en el objeto producto
                 actualizarSubtotal(producto, div); // Actualizar el subtotal
                 actualizarTotal(); // Actualizar el total general
-                guardarCarrito(); // Guardar cambios en localStorage
+
+                // Remueve la clase 'menosDeshabilitado' al incrementar
+                restarBtn.classList.remove("menosDeshabilitado");
             });
+
+            // Aplicar la clase 'menosDeshabilitado' al cargar si la cantidad es 1
+            if (producto.cantidad === 1) {
+                restarBtn.classList.add("menosDeshabilitado");
+            }
         });
 
-        // Actualizamos los botones de eliminar y el total general
         actualizarBotonesEliminar();
         actualizarTotal();
 
@@ -97,11 +111,6 @@ function actualizarSubtotal(producto, elementoProducto) {
     subtotalElement.textContent = `$${producto.precio * producto.cantidad}`;
 }
 
-// Función para guardar el carrito en localStorage
-function guardarCarrito() {
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-}
-
 cargarProductosCarrito();
 
 function actualizarBotonesEliminar() {
@@ -117,8 +126,8 @@ function eliminarDelCarrito(e) {
         text: "Producto eliminado",
         duration: 3000,
         close: true,
-        gravity: "top", 
-        position: "right", 
+        gravity: "top",
+        position: "right",
         stopOnFocus: true,
         style: {
           background: "linear-gradient(to right, #3185fc, #1050b1)",
@@ -138,7 +147,8 @@ function eliminarDelCarrito(e) {
     
     productosEnCarrito.splice(index, 1);
     cargarProductosCarrito();
-    guardarCarrito();
+
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
 
 botonVaciar.addEventListener("click", vaciarCarrito);
@@ -154,10 +164,10 @@ function vaciarCarrito() {
     }).then((result) => {
         if (result.isConfirmed) {
             productosEnCarrito.length = 0;
-            guardarCarrito();
+            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
             cargarProductosCarrito();
         }
-    });
+    })
 }
 
 function actualizarTotal() {
@@ -168,7 +178,7 @@ function actualizarTotal() {
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
     productosEnCarrito.length = 0;
-    guardarCarrito();
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
     
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.add("disabled");

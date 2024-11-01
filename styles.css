@@ -587,6 +587,10 @@ a.seguirComprando {
     height: 10rem;
 }
 
+.menosDeshabilitado{
+    visibility: hidden !important;
+}
+
   @media screen and (max-width: 675px){
     body{
         height: 100vh;
