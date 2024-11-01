@@ -1,0 +1,242 @@
+[
+    {
+        "id": "camiseta-01",
+        "titulo": "Barcelona 2008/2009",
+        "imagen": "./img/camiseta/01.PNG",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "Camisetas"
+        },
+        "precio": 28000
+    },    
+    {
+        "id": "camiseta-02",
+        "titulo": "Real Madrid 2013/2014",
+        "imagen": "./img/camiseta/02.webp",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "Camisetas"
+        },
+        "precio": 28000
+    },
+    {
+        "id": "camiseta-03",
+        "titulo": "Manchester United 2007/2008",
+        "imagen": "./img/camiseta/03.PNG",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "Camisetas"
+        },
+        "precio": 28000
+    },
+    {
+        "id": "camiseta-04",
+        "titulo": "Chelsea 2011/2012",
+        "imagen": "./img/camiseta/04.jpg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "Camisetas"
+        },
+        "precio": 28000
+    },
+    {
+        "id": "camiseta-05",
+        "titulo": "Milan 2006/2007",
+        "imagen": "./img/camiseta/05.jpg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "Camisetas"
+        },
+        "precio": 28000
+    },
+    {
+        "id": "camiseta-06",
+        "titulo": "Inter de Milan 2009/2010",
+        "imagen": "./img/camiseta/06.jpg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "Camisetas"
+        },
+        "precio": 28000
+    },
+    {
+        "id": "camiseta-07",
+        "titulo": "Argentina 1986",
+        "imagen": "./img/camiseta/07.jpg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "Camisetas"
+        },
+        "precio": 28000
+    },
+    {
+        "id": "camiseta-08",
+        "titulo": "Brasil 2002",
+        "imagen": "./img/camiseta/08.jpg",
+        "categoria": {
+            "nombre": "Camisetas",
+            "id": "Camisetas"
+        },
+        "precio": 28000
+    },
+    {
+        "id": "shorts-01",
+        "titulo": "Argentina 1986 short",
+        "imagen": "img/short/01.jpg",
+        "categoria": {
+            "nombre": "Shorts",
+            "id": "Shorts"
+        },
+        "precio": 14000
+    },
+    {
+        "id": "shorts-02",
+        "titulo": "Brasil 2002 short",
+        "imagen": "img/short/02.webp",
+        "categoria": {
+            "nombre": "Shorts",
+            "id": "Shorts"
+        },
+        "precio": 14000
+    },
+    {
+        "id": "shorts-03",
+        "titulo": "Barcelona 2008/2009 short",
+        "imagen": "img/short/03.webp",
+        "categoria": {
+            "nombre": "Shorts",
+            "id": "Shorts"
+        },
+        "precio": 14000
+    },
+    {
+        "id": "shorts-04",
+        "titulo": "Real Madrid 2013/2014 short",
+        "imagen": "img/short/04.jpg",
+        "categoria": {
+            "nombre": "Shorts",
+            "id": "Shorts"
+        },
+        "precio": 14000
+    },
+    {
+        "id": "abrigos-01",
+        "titulo": "Argentina retro camperón",
+        "imagen": "img/abrigos/01.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "Abrigos"
+        },
+        "precio": 60000
+    },
+    {
+        "id": "abrigos-02",
+        "titulo": "Argentina retro campera negra",
+        "imagen": "img/abrigos/02.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "Abrigos"
+        },
+        "precio": 45000
+    },
+    {
+        "id": "abrigos-03",
+        "titulo": "Argentina retro buzo",
+        "imagen": "img/abrigos/03.png",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "Abrigos"
+        },
+        "precio": 40000
+    },
+    {
+        "id": "abrigos-04",
+        "titulo": "Boca Juniors retro buzo",
+        "imagen": "img/abrigos/04.jpg",
+        "categoria": {
+            "nombre": "Abrigos",
+            "id": "Abrigos"
+        },
+        "precio": 40000
+    },
+    {
+        "id": "accesorios-01",
+        "titulo": "Bolso Adidas retro",
+        "imagen": "img/accesorios/01.png",
+        "categoria": {
+            "nombre": "Accesorios",
+            "id": "Accesorios"
+        },
+        "precio": 34000
+    },
+    {
+        "id": "accesorios-02",
+        "titulo": "Bolso botinero Boca Juniors",
+        "imagen": "img/accesorios/02.png",
+        "categoria": {
+            "nombre": "Accesorios",
+            "id": "Accesorios"
+        },
+        "precio": 20000
+    },
+    {
+        "id": "accesorios-03",
+        "titulo": "Mochila Barcelona retro",
+        "imagen": "img/accesorios/03.png",
+        "categoria": {
+            "nombre": "Accesorios",
+            "id": "Accesorios"
+        },
+        "precio": 36000
+    },
+    {
+        "id": "accesorios-04",
+        "titulo": "Mochila Real Madrid retro",
+        "imagen": "img/accesorios/04.png",
+        "categoria": {
+            "nombre": "Accesorios",
+            "id": "Accesorios"
+        },
+        "precio": 36000
+    },
+    {
+        "id": "descuentos-01",
+        "titulo": "Juventus 2006/2007",
+        "imagen": "img/descuentos/01.jpg",
+        "categoria": {
+            "nombre": "Descuentos",
+            "id": "Descuentos"
+        },
+        "precio": 20000
+    },
+    {
+        "id": "descuentos-02",
+        "titulo": "Ajax 1994/1995",
+        "imagen": "img/descuentos/02.jpg",
+        "categoria": {
+            "nombre": "Descuentos",
+            "id": "Descuentos"
+        },
+        "precio": 20000
+    },
+    {
+        "id": "descuentos-03",
+        "titulo": "River Plate 2010/2011",
+        "imagen": "img/descuentos/03.jpg",
+        "categoria": {
+            "nombre": "Descuentos",
+            "id": "Descuentos"
+        },
+        "precio": 20000
+    },
+    {
+        "id": "descuentos-04",
+        "titulo": "Borussia Dortmund 1996/1997",
+        "imagen": "img/descuentos/04.jpg",
+        "categoria": {
+            "nombre": "Descuentos",
+            "id": "Descuentos"
+        },
+        "precio": 20000
+    }
+]
