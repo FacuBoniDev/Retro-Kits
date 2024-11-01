@@ -573,14 +573,16 @@ a.seguirComprando {
     font-size: 1.8rem;
 }
 
-.headerMobileIndex img{
+.headerMobileIndex .logo img{
     height: 10rem;
 }
 
   @media screen and (max-width: 675px){
     body{
-        height: 100vh;;
-    }
+        height: 100vh;
+        /* max-width: 100%; */
+    } 
+
     .asideDesactivar{
         display: none;
     }
@@ -715,10 +717,17 @@ a.seguirComprando {
         display: grid;
         grid-template-rows: auto 1fr auto;
     } */
-    .carritoImg{
-        height: 60%
+    .carritoImgMobile{
+        height: 3rem
     }
     .numerito{
         font-size: 2rem;
+        padding: 1rem;
+        align-self: center;
+        background-color: transparent;
+    }
+    .numeroCarrito{
+        display: flex;
+        align-items: center;
     }
 }
