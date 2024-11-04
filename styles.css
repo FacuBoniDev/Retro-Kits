@@ -100,18 +100,22 @@ h1{
 .copy{
     flex: 1; /* Toma el espacio restante, permitiendo centrar el contenido */
     text-align: center; /* Centra el texto horizontalmente */
-    margin-left: 7.4rem;
+    margin-left: 14rem;
 }
 
 .socials{
     display: flex; /* Habilita el uso de flexbox para alinear iconos */
-    gap: 2rem; /* Espacio entre los iconos sociales */
-    margin-right: 5rem;
+    gap: 1.5rem; /* Espacio entre los iconos sociales */
+    margin-right: 9rem;
 }
 
 .socialImg{
     height: 1.4rem;
     width: auto;
+    padding: .5rem;
+    &:hover{
+        transform: scale(1.25);
+    }
 }
 
 li{
